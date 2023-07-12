@@ -147,6 +147,7 @@
                         "pagingType": "PageToken",
                         "nextPageTokenJsonPath": "$.nextPageKey",
                         "nextPageParaName": "nextPageKey",
+                        "nextPageUrlQueryParameters": {"nextPageKey": "{{nextPageKey}}"},
                         "pageSizeParaName": "pageSize",
                         "pageSize": 500
                     },
