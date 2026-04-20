@@ -382,10 +382,10 @@
                 "status": "Available",
                 "requiredDataConnectors": [
                   {
+                    "connectorId": "DynatraceAttacks",
                     "dataTypes": [
                       "DynatraceAttacks"
-                    ],
-                    "connectorId": "DynatraceAttacks"
+                    ]
                   }
                 ],
                 "tactics": [
@@ -405,8 +405,8 @@
                     "entityType": "Host",
                     "fieldMappings": [
                       {
-                        "columnName": "host",
-                        "identifier": "HostName"
+                        "identifier": "HostName",
+                        "columnName": "host"
                       }
                     ]
                   },
@@ -414,8 +414,8 @@
                     "entityType": "URL",
                     "fieldMappings": [
                       {
-                        "columnName": "url",
-                        "identifier": "Url"
+                        "identifier": "Url",
+                        "columnName": "url"
                       }
                     ]
                   },
@@ -423,8 +423,8 @@
                     "entityType": "IP",
                     "fieldMappings": [
                       {
-                        "columnName": "sourceIp",
-                        "identifier": "Address"
+                        "identifier": "Address",
+                        "columnName": "sourceIp"
                       }
                     ]
                   }
@@ -433,10 +433,10 @@
                   "aggregationKind": "AlertPerResult"
                 },
                 "customDetails": {
-                  "AttackType": "AttackType",
+                  "AttackIdentifier": "AttackId",
                   "AttackState": "State",
                   "DisplayIdentifier": "DisplayId",
-                  "AttackIdentifier": "AttackId"
+                  "AttackType": "AttackType"
                 },
                 "alertDetailsOverride": {
                   "alertDisplayNameFormat": "Dynatrace Attack {{State}} - {{DisplayId}} : {{DisplayName}}",
@@ -445,10 +445,10 @@
                 "incidentConfiguration": {
                   "createIncident": true,
                   "groupingConfiguration": {
-                    "matchingMethod": "AllEntities",
-                    "lookbackDuration": "P7D",
                     "enabled": true,
-                    "reopenClosedIncident": true
+                    "reopenClosedIncident": true,
+                    "matchingMethod": "AllEntities",
+                    "lookbackDuration": "P7D"
                   }
                 }
               }
@@ -532,10 +532,10 @@
                 "status": "Available",
                 "requiredDataConnectors": [
                   {
+                    "connectorId": "DynatraceRuntimeVulnerabilities",
                     "dataTypes": [
                       "DynatraceSecurityProblems"
-                    ],
-                    "connectorId": "DynatraceRuntimeVulnerabilities"
+                    ]
                   }
                 ],
                 "tactics": [
@@ -561,8 +561,8 @@
                     "entityType": "URL",
                     "fieldMappings": [
                       {
-                        "columnName": "Url",
-                        "identifier": "Url"
+                        "identifier": "Url",
+                        "columnName": "Url"
                       }
                     ]
                   }
@@ -571,34 +571,34 @@
                   "aggregationKind": "AlertPerResult"
                 },
                 "customDetails": {
-                  "DAVISPublicExploit": "DAVISPublicExploit",
-                  "DAVISRiskScore": "DAVISRiskScore",
-                  "SecurityProblemUrl": "Url",
-                  "VulnerabilityType": "VulnerabilityType",
-                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
-                  "SecProbIdentifier": "SecurityProblemId",
-                  "CVEIds": "CVEIds",
+                  "DAVISRiskLevel": "DAVISRiskLevel",
                   "PackageName": "PackageName",
-                  "DisplayIdentifier": "DisplayId",
-                  "DAVISDataAssets": "DAVISDataAssets",
-                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
-                  "DAVISExposure": "DAVISExposure",
-                  "DAVISRiskVector": "DAVISRiskVector",
                   "Technology": "Technology",
-                  "DAVISRiskLevel": "DAVISRiskLevel"
+                  "DAVISDataAssets": "DAVISDataAssets",
+                  "DAVISExposure": "DAVISExposure",
+                  "CVEIds": "CVEIds",
+                  "DAVISRiskVector": "DAVISRiskVector",
+                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
+                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
+                  "DAVISPublicExploit": "DAVISPublicExploit",
+                  "DisplayIdentifier": "DisplayId",
+                  "SecurityProblemUrl": "Url",
+                  "SecProbIdentifier": "SecurityProblemId",
+                  "DAVISRiskScore": "DAVISRiskScore",
+                  "VulnerabilityType": "VulnerabilityType"
                 },
                 "alertDetailsOverride": {
-                  "alertDisplayNameFormat": "Dynatrace Code-Level runtime vulnerability detected - {{DisplayId}} : {{Title}}",
                   "alertDescriptionFormat": "Code-Level runtime vulnerability ({{ExternalVulnerabilityId}}) detected in package ({{PackageName}}), more details available from Dynatrace at {{Url}}.\n",
-                  "alertSeverityColumnName": "Severity"
+                  "alertSeverityColumnName": "Severity",
+                  "alertDisplayNameFormat": "Dynatrace Code-Level runtime vulnerability detected - {{DisplayId}} : {{Title}}"
                 },
                 "incidentConfiguration": {
                   "createIncident": false,
                   "groupingConfiguration": {
-                    "matchingMethod": "AllEntities",
-                    "lookbackDuration": "PT5H",
                     "enabled": false,
-                    "reopenClosedIncident": false
+                    "reopenClosedIncident": false,
+                    "matchingMethod": "AllEntities",
+                    "lookbackDuration": "PT5H"
                   }
                 }
               }
@@ -682,10 +682,10 @@
                 "status": "Available",
                 "requiredDataConnectors": [
                   {
+                    "connectorId": "DynatraceRuntimeVulnerabilities",
                     "dataTypes": [
                       "DynatraceSecurityProblems"
-                    ],
-                    "connectorId": "DynatraceRuntimeVulnerabilities"
+                    ]
                   }
                 ],
                 "tactics": [
@@ -711,8 +711,8 @@
                     "entityType": "URL",
                     "fieldMappings": [
                       {
-                        "columnName": "Url",
-                        "identifier": "Url"
+                        "identifier": "Url",
+                        "columnName": "Url"
                       }
                     ]
                   }
@@ -721,34 +721,34 @@
                   "aggregationKind": "AlertPerResult"
                 },
                 "customDetails": {
-                  "DAVISPublicExploit": "DAVISPublicExploit",
-                  "DAVISRiskScore": "DAVISRiskScore",
-                  "SecurityProblemUrl": "Url",
-                  "VulnerabilityType": "VulnerabilityType",
-                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
-                  "SecProbIdentifier": "SecurityProblemId",
-                  "CVEIds": "CVEIds",
+                  "DAVISRiskLevel": "DAVISRiskLevel",
                   "PackageName": "PackageName",
-                  "DisplayIdentifier": "DisplayId",
-                  "DAVISDataAssets": "DAVISDataAssets",
-                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
-                  "DAVISExposure": "DAVISExposure",
-                  "DAVISRiskVector": "DAVISRiskVector",
                   "Technology": "Technology",
-                  "DAVISRiskLevel": "DAVISRiskLevel"
+                  "DAVISDataAssets": "DAVISDataAssets",
+                  "DAVISExposure": "DAVISExposure",
+                  "CVEIds": "CVEIds",
+                  "DAVISRiskVector": "DAVISRiskVector",
+                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
+                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
+                  "DAVISPublicExploit": "DAVISPublicExploit",
+                  "DisplayIdentifier": "DisplayId",
+                  "SecurityProblemUrl": "Url",
+                  "SecProbIdentifier": "SecurityProblemId",
+                  "DAVISRiskScore": "DAVISRiskScore",
+                  "VulnerabilityType": "VulnerabilityType"
                 },
                 "alertDetailsOverride": {
-                  "alertDisplayNameFormat": "Dynatrace Third-party runtime vulnerability detected - {{DisplayId}} : {{Title}}",
                   "alertDescriptionFormat": "Third-party runtime vulnerability ({{ExternalVulnerabilityId}}) detected in package ({{PackageName}}), more details available from Dynatrace at {{Url}}.\n",
-                  "alertSeverityColumnName": "Severity"
+                  "alertSeverityColumnName": "Severity",
+                  "alertDisplayNameFormat": "Dynatrace Third-party runtime vulnerability detected - {{DisplayId}} : {{Title}}"
                 },
                 "incidentConfiguration": {
                   "createIncident": false,
                   "groupingConfiguration": {
-                    "matchingMethod": "AllEntities",
-                    "lookbackDuration": "PT5H",
                     "enabled": false,
-                    "reopenClosedIncident": false
+                    "reopenClosedIncident": false,
+                    "matchingMethod": "AllEntities",
+                    "lookbackDuration": "PT5H"
                   }
                 }
               }
@@ -832,10 +832,10 @@
                 "status": "Available",
                 "requiredDataConnectors": [
                   {
+                    "connectorId": "DynatraceRuntimeVulnerabilities",
                     "dataTypes": [
                       "DynatraceSecurityProblems"
-                    ],
-                    "connectorId": "DynatraceRuntimeVulnerabilities"
+                    ]
                   }
                 ],
                 "tactics": [
@@ -860,34 +860,34 @@
                   "aggregationKind": "AlertPerResult"
                 },
                 "customDetails": {
-                  "DAVISPublicExploit": "DAVISPublicExploit",
-                  "DAVISRiskScore": "DAVISRiskScore",
-                  "SecurityProblemUrl": "Url",
-                  "VulnerabilityType": "VulnerabilityType",
-                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
-                  "SecProbIdentifier": "SecurityProblemId",
-                  "CVEIds": "CVEIds",
+                  "DAVISRiskLevel": "DAVISRiskLevel",
                   "PackageName": "PackageName",
-                  "DisplayIdentifier": "DisplayId",
-                  "DAVISDataAssets": "DAVISDataAssets",
-                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
-                  "DAVISExposure": "DAVISExposure",
-                  "DAVISRiskVector": "DAVISRiskVector",
                   "Technology": "Technology",
-                  "DAVISRiskLevel": "DAVISRiskLevel"
+                  "DAVISDataAssets": "DAVISDataAssets",
+                  "DAVISExposure": "DAVISExposure",
+                  "CVEIds": "CVEIds",
+                  "DAVISRiskVector": "DAVISRiskVector",
+                  "DAVISVulnFuncUsage": "DAVISVulnerableFunctionUsage",
+                  "ExternVulnIdentifier": "ExternalVulnerabilityId",
+                  "DAVISPublicExploit": "DAVISPublicExploit",
+                  "DisplayIdentifier": "DisplayId",
+                  "SecurityProblemUrl": "Url",
+                  "SecProbIdentifier": "SecurityProblemId",
+                  "DAVISRiskScore": "DAVISRiskScore",
+                  "VulnerabilityType": "VulnerabilityType"
                 },
                 "alertDetailsOverride": {
-                  "alertDisplayNameFormat": "Dynatrace Non-critical runtime vulnerability detected - {{DisplayId}} : {{Title}}",
                   "alertDescriptionFormat": "Non-critical runtime vulnerability ({{ExternalVulnerabilityId}}) detected in package ({{PackageName}}), more details available from Dynatrace at {{Url}}.\n",
-                  "alertSeverityColumnName": "Severity"
+                  "alertSeverityColumnName": "Severity",
+                  "alertDisplayNameFormat": "Dynatrace Non-critical runtime vulnerability detected - {{DisplayId}} : {{Title}}"
                 },
                 "incidentConfiguration": {
                   "createIncident": false,
                   "groupingConfiguration": {
-                    "matchingMethod": "AllEntities",
-                    "lookbackDuration": "PT5H",
                     "enabled": false,
-                    "reopenClosedIncident": false
+                    "reopenClosedIncident": false,
+                    "matchingMethod": "AllEntities",
+                    "lookbackDuration": "PT5H"
                   }
                 }
               }
@@ -971,10 +971,10 @@
                 "status": "Available",
                 "requiredDataConnectors": [
                   {
+                    "connectorId": "DynatraceProblems",
                     "dataTypes": [
                       "DynatraceProblems"
-                    ],
-                    "connectorId": "DynatraceProblems"
+                    ]
                   }
                 ],
                 "tactics": [
@@ -999,23 +999,23 @@
                   "aggregationKind": "AlertPerResult"
                 },
                 "customDetails": {
+                  "DisplayIdentifier": "DisplayId",
                   "SeverityLevel": "SeverityLevel",
                   "ProblemIdentifier": "ProblemId",
-                  "DisplayIdentifier": "DisplayId",
                   "ImpactLevel": "ImpactLevel"
                 },
                 "alertDetailsOverride": {
-                  "alertDisplayNameFormat": "Dynatrace problem detected - {{DisplayId}} : {{Title}}",
                   "alertDescriptionFormat": "A application and/or infrastructure problem has been detected in your environment\n",
-                  "alertSeverityColumnName": "Severity"
+                  "alertSeverityColumnName": "Severity",
+                  "alertDisplayNameFormat": "Dynatrace problem detected - {{DisplayId}} : {{Title}}"
                 },
                 "incidentConfiguration": {
                   "createIncident": false,
                   "groupingConfiguration": {
-                    "matchingMethod": "AllEntities",
-                    "lookbackDuration": "PT5H",
                     "enabled": false,
-                    "reopenClosedIncident": false
+                    "reopenClosedIncident": false,
+                    "matchingMethod": "AllEntities",
+                    "lookbackDuration": "PT5H"
                   }
                 }
               }
@@ -5310,7 +5310,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "[variables('_uiConfigId1')]",
-                  "title": "Dynatrace Attacks V1",
+                  "title": "[Deprecated] Dynatrace Attacks V1",
                   "publisher": "Dynatrace",
                   "descriptionMarkdown": "This connector uses the Dynatrace Attacks REST API to ingest detected attacks into Microsoft Sentinel Log Analytics",
                   "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -5481,7 +5481,7 @@
         "contentSchemaVersion": "3.0.0",
         "contentId": "[variables('_dataConnectorContentId1')]",
         "contentKind": "DataConnector",
-        "displayName": "Dynatrace Attacks V1",
+        "displayName": "[Deprecated] Dynatrace Attacks V1",
         "contentProductId": "[variables('_dataConnectorcontentProductId1')]",
         "id": "[variables('_dataConnectorcontentProductId1')]",
         "version": "[variables('dataConnectorVersion1')]"
@@ -5526,7 +5526,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "[variables('_uiConfigId1')]",
-          "title": "Dynatrace Attacks V1",
+          "title": "[Deprecated] Dynatrace Attacks V1",
           "publisher": "Dynatrace",
           "descriptionMarkdown": "This connector uses the Dynatrace Attacks REST API to ingest detected attacks into Microsoft Sentinel Log Analytics",
           "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -8554,7 +8554,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "[variables('_uiConfigId6')]",
-                  "title": "Dynatrace Audit Logs V1",
+                  "title": "[Deprecated] Dynatrace Audit Logs V1",
                   "publisher": "Dynatrace",
                   "descriptionMarkdown": "This connector uses the [Dynatrace Audit Logs REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/audit-logs) to ingest tenant audit logs into Microsoft Sentinel Log Analytics",
                   "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -8722,7 +8722,7 @@
         "contentSchemaVersion": "3.0.0",
         "contentId": "[variables('_dataConnectorContentId6')]",
         "contentKind": "DataConnector",
-        "displayName": "Dynatrace Audit Logs V1",
+        "displayName": "[Deprecated] Dynatrace Audit Logs V1",
         "contentProductId": "[variables('_dataConnectorcontentProductId6')]",
         "id": "[variables('_dataConnectorcontentProductId6')]",
         "version": "[variables('dataConnectorVersion6')]"
@@ -8767,7 +8767,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "[variables('_uiConfigId6')]",
-          "title": "Dynatrace Audit Logs V1",
+          "title": "[Deprecated] Dynatrace Audit Logs V1",
           "publisher": "Dynatrace",
           "descriptionMarkdown": "This connector uses the [Dynatrace Audit Logs REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/audit-logs) to ingest tenant audit logs into Microsoft Sentinel Log Analytics",
           "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -8925,7 +8925,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "[variables('_uiConfigId7')]",
-                  "title": "Dynatrace Problems V1",
+                  "title": "[Deprecated] Dynatrace Problems V1",
                   "publisher": "Dynatrace",
                   "descriptionMarkdown": "This connector uses the [Dynatrace Problem REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/problems-v2) to ingest problem events into Microsoft Sentinel Log Analytics",
                   "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -9112,7 +9112,7 @@
         "contentSchemaVersion": "3.0.0",
         "contentId": "[variables('_dataConnectorContentId7')]",
         "contentKind": "DataConnector",
-        "displayName": "Dynatrace Problems V1",
+        "displayName": "[Deprecated] Dynatrace Problems V1",
         "contentProductId": "[variables('_dataConnectorcontentProductId7')]",
         "id": "[variables('_dataConnectorcontentProductId7')]",
         "version": "[variables('dataConnectorVersion7')]"
@@ -9157,7 +9157,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "[variables('_uiConfigId7')]",
-          "title": "Dynatrace Problems V1",
+          "title": "[Deprecated] Dynatrace Problems V1",
           "publisher": "Dynatrace",
           "descriptionMarkdown": "This connector uses the [Dynatrace Problem REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/problems-v2) to ingest problem events into Microsoft Sentinel Log Analytics",
           "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -9334,7 +9334,7 @@
               "properties": {
                 "connectorUiConfig": {
                   "id": "[variables('_uiConfigId8')]",
-                  "title": "Dynatrace Runtime Vulnerabilities V1",
+                  "title": "[Deprecated] Dynatrace Runtime Vulnerabilities V1",
                   "publisher": "Dynatrace",
                   "descriptionMarkdown": "This connector uses the [Dynatrace Security Problem REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities) to ingest detected runtime vulnerabilities into Microsoft Sentinel Log Analytics.",
                   "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
@@ -9521,7 +9521,7 @@
         "contentSchemaVersion": "3.0.0",
         "contentId": "[variables('_dataConnectorContentId8')]",
         "contentKind": "DataConnector",
-        "displayName": "Dynatrace Runtime Vulnerabilities V1",
+        "displayName": "[Deprecated] Dynatrace Runtime Vulnerabilities V1",
         "contentProductId": "[variables('_dataConnectorcontentProductId8')]",
         "id": "[variables('_dataConnectorcontentProductId8')]",
         "version": "[variables('dataConnectorVersion8')]"
@@ -9566,7 +9566,7 @@
       "properties": {
         "connectorUiConfig": {
           "id": "[variables('_uiConfigId8')]",
-          "title": "Dynatrace Runtime Vulnerabilities V1",
+          "title": "[Deprecated] Dynatrace Runtime Vulnerabilities V1",
           "publisher": "Dynatrace",
           "descriptionMarkdown": "This connector uses the [Dynatrace Security Problem REST API](https://docs.dynatrace.com/docs/dynatrace-api/environment-api/application-security/vulnerabilities/get-vulnerabilities) to ingest detected runtime vulnerabilities into Microsoft Sentinel Log Analytics.",
           "additionalRequirementBanner": "This data connector depends on a parser based on Kusto Function to work as expected which is deployed with the Microsoft Sentinel Solution.",
